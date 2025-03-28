@@ -29,3 +29,8 @@ The reason why pods were "invented".
     - and exposes an API for other services to access the shared resources / perform operations on those pods
     - The APIs have an IP address and a port address
 
+
+## Scheduler
+The scheduler is created by the controller manager and uses etcd to look up the state of the cluster 
+and which nodes to deploy a newly created pod in.
+Etcd is a distributed key-value store that is very fast and monitors the state of the cluster
