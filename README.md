@@ -28,3 +28,4 @@ The reason why pods were "invented".
     - and call the packaging "pod". Each pod can container one or more docker container with access to shared resources
     - and exposes an API for other services to access the shared resources / perform operations on those pods
     - The APIs have an IP address and a port address
+
