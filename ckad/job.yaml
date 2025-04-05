@@ -5,6 +5,8 @@ metadata:
   name: neb-new-job
   namespace: neptune
 spec:
+  parallelism: 2
+  completion: 3
   template:
     metadata:
       creationTimestamp: null
