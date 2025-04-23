@@ -1,0 +1,6 @@
+NAME                   STATUS   AGE
+default                Active   360d
+kube-node-lease        Active   360d
+kube-public            Active   360d
+kube-system            Active   360d
+kubernetes-dashboard   Active   326d
