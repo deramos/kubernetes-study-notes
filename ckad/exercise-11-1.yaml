@@ -23,7 +23,7 @@ spec:
         name: grafana
         ports:
         - containerPort: 3000
-      readinessProbe:
+        readinessProbe:
         httpGet:
           path: /
           port: 3000
