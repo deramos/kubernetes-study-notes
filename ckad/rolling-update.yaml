@@ -8,22 +8,23 @@ spec:
     rollingUpdate:
       maxUnavailable: 40%
       maxSurge: 10%
-    minReadySeconds: 60
-    selector:
-      matchLabels:
+  minReadySeconds: 60
+  selector:
+    matchLabels:
+      app: httpd
+  template:
+    metadata:
+      labels:
         app: httpd
-    template:
-      metadata:
-        name: httpd
-      spec:
-        containers:
-          - name: httpd
-            image: httpd:2.4.23-alpine
-            ports:
-              - containerPort: 80
-                protocol: TCP
-            readinessProbe:
-              httpGet:
-                path: /
-                port: 80
+    spec:
+      containers:
+        - name: httpd
+          image: httpd:2.4.23-alpine
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
 
