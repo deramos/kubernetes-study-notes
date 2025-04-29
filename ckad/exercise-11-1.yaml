@@ -9,6 +9,7 @@ spec:
     rollingUpdate:
       maxUnavailable: 50%
       maxSurge: 50%
+  minReadySeconds: 10
   selector:
     matchLabels:
       app: grafana
@@ -22,4 +23,8 @@ spec:
         name: grafana
         ports:
         - containerPort: 3000
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 3000
 
