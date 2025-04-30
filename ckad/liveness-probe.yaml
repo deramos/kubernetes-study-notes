@@ -4,7 +4,7 @@ metadata:
   name: readiness-pod
 spec:
   containers:
-  - image: nginx:1.36.1
+  - image: nginx:1.25.1
     name: hello-word
     ports:
     - name: nginx-port
