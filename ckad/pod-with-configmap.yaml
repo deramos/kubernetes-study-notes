@@ -8,5 +8,5 @@ spec:
     name: pod-from-cm-container
     envFrom:
     - configMapRef:
-        name: pod-cm
+        name: db-config
 
