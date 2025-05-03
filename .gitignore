@@ -172,3 +172,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Ceritifcates and encryption data
+ckad/*.crt
+ckad/*.key
+ckad/*.csr
+ckad/*.srl
+
