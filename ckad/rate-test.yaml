@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rate-app
+  namespace: k97
+spec:
+  containers:
+  - image: bmuschko/nodejs-business-app:1.0.0
+    name: rate-app
+    ports:
+    - containerPort: 8080
+  - image: bmuschko/nodejs-ambassador:1.0.0
+    name: ambassador
+    ports:
+    - containerPort: 8081
+    resources:
+      limits:
+        memory: "641Mi"
+        cpu: "1"
+      requests:
+        memory: "200Mi"
+        cpu: "500m"
+
