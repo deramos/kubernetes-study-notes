@@ -11,6 +11,10 @@ spec:
     resources:
       limits:
         memory: "256Mi"
+        cpu: "1"
+      requests:
+        memory: "128Mi"
+        cpu: "500m"
   - image: bmuschko/nodejs-ambassador:1.0.0
     name: ambassador
     ports:
@@ -18,4 +22,8 @@ spec:
     resources:
       limits:
         memory: "641Mi"
+        cpu: "1"
+      requests:
+        memory: "200Mi"
+        cpu: "500m"
 
