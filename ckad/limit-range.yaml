@@ -2,6 +2,7 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: resource-constraint
+  namespace: k97
 spec:
   limits:
   - type: Container
