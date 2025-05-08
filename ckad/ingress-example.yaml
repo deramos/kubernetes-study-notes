@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: next-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewritee-target: /$1
+spec:
+  rules:
+  - host: next.example.com
+    http:
+      paths:
+      - path: /app
+        pathType: Exact
+        backend:
+          service: 
+            name: app-service
+            port:
+              number: 8080
+
