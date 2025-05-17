@@ -4,7 +4,7 @@ metadata:
   name: init-demo
 spec:
   volumes:
-    name: shared-data
+  - name: shared-data
     emptyDir: {}
   initContainers:
   - name: init
