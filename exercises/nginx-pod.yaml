@@ -5,12 +5,14 @@ metadata:
   labels:
     app: web
     env: dev
-  name: web
+  name: nginx-pod
   namespace: dev
 spec:
   containers:
   - image: nginx:1.17
     name: web
+    ports:
+     - containerPort: 80
     resources: {}
   dnsPolicy: ClusterFirst
   restartPolicy: Always
