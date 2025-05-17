@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cpu-demo
+  template:
+    metadata:
+      labels:
+        app: cpu-demo
+    spec:
+      containers:
+        - name: cpu-demo-container
+          image: vish/stress
+          args:
+          - stress
+          - --cpu
+          - 1
+          resources:
+            requests:
+            - cpu: 100m
+            limits:
+            - cpu: 200m
+  
