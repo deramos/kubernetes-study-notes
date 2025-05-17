@@ -3,11 +3,20 @@ kind: Pod
 metadata:
   name: multi-log
 spec:
+  volumes:
+  - name: shared-volume
+    emptyDir: {}
   containers:
   - name: logger
     image: busybox
-    command: ['sh, '-c', 'while true; do date >> /shared/log.txt; sleep 5; done']
+    command: ['sh', '-c', 'while true; do date >> /shared/log.txt; sleep 5; done']
+    volumeMounts:
+    - name: shared-volume
+      mountPath: /shared
   - name: viewer
     image: busybox
     command: ['sh', '-c', 'sleep 3600']
+    volumeMounts:
+    - name: shared-volume
+      mountPath: /shared
 
