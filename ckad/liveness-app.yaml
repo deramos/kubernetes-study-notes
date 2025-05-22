@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: liveness-app
+  name: liveness-app
+spec:
+  containers:
+  - image: nginx
+    name: liveness-app
+    livenessProbe:
+      httpGet:
+        path: /healthz
+        port: 80
+      initialDelaySeconds: 10
+      periodSeconds: 5
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
