@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: readiness-app
+  name: readiness-app
+spec:
+  containers:
+  - image: nginx
+    name: readiness-app
+    readinessProbe:
+      httpGet:
+        path: /readyz
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 3
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
+
