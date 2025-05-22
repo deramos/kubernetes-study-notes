@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello-cron
+spec:
+  jobTemplate:
+    metadata:
+      name: hello-cron
+    spec:
+      template:
+        spec:
+          containers:
+          - image: busybox
+            name: hello-cron
+            command: ['sh', '-c', 'echo "Hello from CKAD"']
+          restartPolicy: OnFailure
+  schedule: '* * * * *'
+status: {}
+
