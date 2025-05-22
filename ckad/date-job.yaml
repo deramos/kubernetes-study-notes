@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: date-job
+spec:
+  template:
+    metadata:
+      labels:
+        name: date-job
+    spec:
+      containers:
+      - image: busybox
+        name: date-job
+        command:
+        - date
+      restartPolicy: Never
+
