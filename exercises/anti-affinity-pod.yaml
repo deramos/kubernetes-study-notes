@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: avoid-dev-node
+  name: avoid-dev-node
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: env
+            operator: NotIn
+            values:
+            - dev
+  containers:
+  - image: nginx
+    name: avoid-dev-node
+  restartPolicy: Always
+status: {}
+
