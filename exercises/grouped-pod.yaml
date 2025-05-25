@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: grouped-pod
+  name: grouped-pod
+spec:
+  affinity:
+    podAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - team1
+        topologyKey: kubernetes.io/hostname
+  containers:
+  - image: nginx
+    name: grouped-pod
+  restartPolicy: Always
+status: {}
+
